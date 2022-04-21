@@ -4,8 +4,13 @@
 }
 
 .square {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 50px;
   height: 50px;
   box-sizing: border-box;
 }
+
+.hover {
+  background-color: black;
+}
+/* look into making random color later */

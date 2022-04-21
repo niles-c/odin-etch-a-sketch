@@ -6,8 +6,14 @@ for (let i = 0; i < 256; i++) {
   const div = document.createElement("div");
   div.classList.add("square");
   container.append(div);
+  div.addEventListener("mouseover", function () {
+    div.classList.add("hover");
+  });
 }
 
-// apply display:flex to container
-// add flex properties to divs in one class
-// add class to each div via for loop
+// add an event listener for each div that adds the hover attribute
+
+// what should happen:
+// -mouse hovers over div and the div changes color (and keeps that color, unless hovered over again(?))
+// -MDN: "movement in and out of an element"
+// -mouseover (bubbling?), mouseenter, mouseleave
