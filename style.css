@@ -1,4 +1,4 @@
-.flex-container {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(16, 50px [col-start]);
 }
@@ -14,3 +14,9 @@
   background-color: black;
 }
 /* look into making random color later */
+
+.clear-button {
+  background-color: aquamarine;
+  width: 100px;
+  height: 50px;
+}
