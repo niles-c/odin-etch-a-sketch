@@ -1,12 +1,21 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(16, 50px [col-start]);
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
 }
 
 .square {
+  /* keep border for now to see squares */
   border: 1px solid black;
-  width: 50px;
-  height: 50px;
   box-sizing: border-box;
 }
 
