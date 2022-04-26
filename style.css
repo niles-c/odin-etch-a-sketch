@@ -13,12 +13,6 @@ body {
   border: 1px solid black;
 }
 
-.square {
-  /* keep border for now to see squares */
-  border: 1px solid black;
-  box-sizing: border-box;
-}
-
 .hover {
   background-color: black;
 }
