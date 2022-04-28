@@ -5,7 +5,7 @@ const h1 = document.querySelector("h1");
 
 // clear grid button
 const button = document.createElement("button");
-document.body.insertBefore(button, document.body.firstChild);
+document.body.insertBefore(button, container);
 button.innerText = "Clear Grid";
 button.classList.add("clear-button");
 button.addEventListener("click", newGrid);
@@ -31,8 +31,14 @@ function newGrid() {
   let inputSize = parseInt(
     prompt("How many squares per side in the new grid?", "")
   );
-  while (inputSize > 100) {
-    inputSize = parseInt(prompt("Set a value of 100 or less"));
+  console.log(inputSize);
+  while (
+    inputSize > 100 ||
+    inputSize < 0 ||
+    typeof inputSize !== "number" ||
+    !inputSize
+  ) {
+    inputSize = parseInt(prompt("Enter a valid value of 100 or less"));
   }
   console.log(inputSize);
   container.innerText = "";
