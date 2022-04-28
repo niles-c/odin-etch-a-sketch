@@ -10,6 +10,11 @@ button.innerText = "Clear Grid";
 button.classList.add("clear-button");
 button.addEventListener("click", newGrid);
 
+// grid display
+const h2 = document.createElement("h2");
+document.body.insertBefore(h2, button);
+h2.classList.add("grid-display");
+
 // build grid
 function buildGrid(size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -21,6 +26,7 @@ function buildGrid(size) {
       div.classList.add("hover");
     });
   }
+  h2.innerText = `${size}x${size} `;
 }
 
 // set default size of 16x16
@@ -31,7 +37,6 @@ function newGrid() {
   let inputSize = parseInt(
     prompt("How many squares per side in the new grid?", "")
   );
-  console.log(inputSize);
   while (
     inputSize > 100 ||
     inputSize < 0 ||
@@ -40,7 +45,6 @@ function newGrid() {
   ) {
     inputSize = parseInt(prompt("Enter a valid value of 100 or less"));
   }
-  console.log(inputSize);
   container.innerText = "";
   buildGrid(inputSize);
 }
