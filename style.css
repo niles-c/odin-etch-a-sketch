@@ -4,6 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
 }
 
 .grid-container {
@@ -13,7 +14,7 @@ body {
   border: 1px solid black;
 }
 
-.hover {
+.hover-black {
   background-color: black;
 }
 /* look into making random color later */
@@ -22,4 +23,13 @@ body {
   background-color: aquamarine;
   width: 100px;
   height: 50px;
+}
+
+.grid-display {
+  margin: 0px;
+}
+
+.color-btn-container {
+  display: flex;
+  gap: 10px;
 }
