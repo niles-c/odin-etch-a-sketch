@@ -1,38 +1,65 @@
 // container
-const container = document.querySelector("#container");
-container.classList.add("grid-container");
+const gridContainer = document.querySelector("#container");
+gridContainer.classList.add("grid-container");
 const h1 = document.querySelector("h1");
 
+// button container
+const btnContainer = document.createElement("div");
+btnContainer.classList.add("btn-container");
+document.body.insertBefore(btnContainer, container);
+
 // clear grid button
-const button = document.createElement("button");
-document.body.insertBefore(button, container);
-button.innerText = "Clear Grid";
-button.classList.add("clear-button");
-button.addEventListener("click", newGrid);
+const clearBtn = document.createElement("button");
+btnContainer.append(clearBtn);
+clearBtn.innerText = "Clear Grid";
+clearBtn.classList.add("clear-button");
+clearBtn.addEventListener("click", newGrid);
+
+// black color button
+const blackBtn = document.createElement("button");
+btnContainer.append(blackBtn);
+blackBtn.innerText = "Black";
+
+// rainbow color button
+const rainbowBtn = document.createElement("button");
+btnContainer.append(rainbowBtn);
+rainbowBtn.innerText = "Rainbow";
+
+// pick color button
+const pickColorBtn = document.createElement("button");
+btnContainer.append(pickColorBtn);
+pickColorBtn.innerText = "Pick";
 
 // grid display
-const h2 = document.createElement("h2");
-document.body.insertBefore(h2, button);
-h2.classList.add("grid-display");
+const sizeDisplay = document.createElement("h2");
+// document.body.insertBefore(h2, btnContainer);
+document.body.append(sizeDisplay);
+sizeDisplay.classList.add("size-display");
+
+// random color function
+const randomColor = function () {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+};
 
 // build grid
 function buildGrid(size) {
-  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for (let i = 0; i < `${size * size}`; i++) {
     const div = document.createElement("div");
-    container.append(div);
+    gridContainer.append(div);
     div.addEventListener("mouseover", function () {
       div.classList.add("hover-black");
     });
   }
-  h2.innerText = `Grid = ${size}x${size} `;
+  sizeDisplay.innerText = `${size}x${size} `;
 }
 
 // call to set default size of 16x16
 buildGrid(16);
-
-const divTest = document.querySelectorAll("div");
 
 // create new grid function
 function newGrid() {
@@ -41,12 +68,12 @@ function newGrid() {
   );
   while (
     inputSize > 100 ||
-    inputSize < 0 ||
+    inputSize < 16 ||
     typeof inputSize !== "number" ||
     !inputSize
   ) {
-    inputSize = parseInt(prompt("Enter a valid value of 100 or less"));
+    inputSize = parseInt(prompt("Enter a value between 16 and 100"));
   }
-  container.innerText = "";
+  gridContainer.innerText = "";
   buildGrid(inputSize);
 }
