@@ -19,16 +19,19 @@ clearBtn.addEventListener("click", newGrid);
 const blackBtn = document.createElement("button");
 btnContainer.append(blackBtn);
 blackBtn.innerText = "Black";
+blackBtn.classList.add("black-button");
 
 // rainbow color button
 const rainbowBtn = document.createElement("button");
 btnContainer.append(rainbowBtn);
 rainbowBtn.innerText = "Rainbow";
+rainbowBtn.classList.add("rainbow-button");
 
 // pick color button
 const pickColorBtn = document.createElement("button");
 btnContainer.append(pickColorBtn);
 pickColorBtn.innerText = "Pick";
+pickColorBtn.classList.add("pick-button");
 
 // grid display
 const sizeDisplay = document.createElement("h2");
