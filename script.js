@@ -10,27 +10,6 @@ button.innerText = "Clear Grid";
 button.classList.add("clear-button");
 button.addEventListener("click", newGrid);
 
-// color buttons container
-const colorBtnContainer = document.createElement("div");
-document.body.appendChild(colorBtnContainer);
-colorBtnContainer.classList.add("color-btn-container");
-
-// black button
-const blackBtn = document.createElement("button");
-blackBtn.innerText = "Black";
-colorBtnContainer.appendChild(blackBtn);
-blackBtn.addEventListener("click", function () {
-  console.log("BLACK CLICKED!");
-});
-
-// rainbow button
-const rainbowBtn = document.createElement("button");
-rainbowBtn.innerText = "Rainbow";
-colorBtnContainer.appendChild(rainbowBtn);
-rainbowBtn.addEventListener("click", function () {
-  console.log("RAINBOW CLICKED!");
-});
-
 // grid display
 const h2 = document.createElement("h2");
 document.body.insertBefore(h2, button);
@@ -47,11 +26,13 @@ function buildGrid(size) {
       div.classList.add("hover-black");
     });
   }
-  h2.innerText = `${size}x${size} `;
+  h2.innerText = `Grid = ${size}x${size} `;
 }
 
 // call to set default size of 16x16
 buildGrid(16);
+
+const divTest = document.querySelectorAll("div");
 
 // create new grid function
 function newGrid() {

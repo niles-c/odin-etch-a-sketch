@@ -28,8 +28,3 @@ body {
 .grid-display {
   margin: 0px;
 }
-
-.color-btn-container {
-  display: flex;
-  gap: 10px;
-}
