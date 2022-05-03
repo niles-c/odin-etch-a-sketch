@@ -1,7 +1,10 @@
+// set initial div color
+let color = "black";
+
 // container
-const gridContainer = document.querySelector("#container");
-gridContainer.classList.add("grid-container");
-const h1 = document.querySelector("h1");
+// const gridContainer = document.querySelector("#container");
+// gridContainer.classList.add("grid-container");
+// const h1 = document.querySelector("h1");
 
 // button container
 const btnContainer = document.createElement("div");
@@ -20,12 +23,18 @@ const blackBtn = document.createElement("button");
 btnContainer.append(blackBtn);
 blackBtn.innerText = "Black";
 blackBtn.classList.add("black-button");
+blackBtn.addEventListener("click", function () {
+  color = "black";
+});
 
 // rainbow color button
 const rainbowBtn = document.createElement("button");
 btnContainer.append(rainbowBtn);
 rainbowBtn.innerText = "Rainbow";
 rainbowBtn.classList.add("rainbow-button");
+rainbowBtn.addEventListener("click", function () {
+  color = "random";
+});
 
 // pick color button
 const pickColorBtn = document.createElement("button");
@@ -35,28 +44,28 @@ pickColorBtn.classList.add("pick-button");
 
 // grid display
 const sizeDisplay = document.createElement("h2");
-// document.body.insertBefore(h2, btnContainer);
 document.body.append(sizeDisplay);
 sizeDisplay.classList.add("size-display");
 
 // random color function
-const randomColor = function () {
+function randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
-};
+}
 
 // build grid
 function buildGrid(size) {
+  const gridContainer = document.querySelector("#container");
+  gridContainer.classList.add("grid-container");
+  const h1 = document.querySelector("h1");
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for (let i = 0; i < `${size * size}`; i++) {
     const div = document.createElement("div");
     gridContainer.append(div);
-    div.addEventListener("mouseover", function () {
-      div.classList.add("hover-black");
-    });
+    div.addEventListener("mouseover", divColor);
   }
   sizeDisplay.innerText = `${size}x${size} `;
 }
@@ -79,4 +88,13 @@ function newGrid() {
   }
   gridContainer.innerText = "";
   buildGrid(inputSize);
+}
+
+// change div color function
+function divColor() {
+  if (color === "random") {
+    this.style.backgroundColor = randomColor();
+  } else {
+    this.style.backgroundColor = color;
+  }
 }
