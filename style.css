@@ -20,29 +20,34 @@ body {
 
 .clear-button {
   background-color: aquamarine;
-  width: 100px;
+  width: 75px;
   height: 50px;
 }
 
 .black-button {
   background-color: black;
   color: white;
-  width: 100px;
+  width: 75px;
   height: 50px;
 }
 
 .rainbow-button {
   background-color: royalblue;
-  width: 100px;
+  width: 75px;
   height: 50px;
 }
 
 .pick-button {
   background-color: blanchedalmond;
-  width: 100px;
+  width: 75px;
   height: 50px;
 }
 
+.eraser-button {
+  background-color: lightgrey;
+  width: 75px;
+  height: 50px;
+}
 .size-display {
   margin: 0px;
 }

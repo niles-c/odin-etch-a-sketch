@@ -42,6 +42,15 @@ btnContainer.append(pickColorBtn);
 pickColorBtn.innerText = "Pick";
 pickColorBtn.classList.add("pick-button");
 
+// eraser button
+const eraserBtn = document.createElement("button");
+btnContainer.append(eraserBtn);
+eraserBtn.innerText = "Erase";
+eraserBtn.classList.add("eraser-button");
+eraserBtn.addEventListener("click", function () {
+  color = "white";
+});
+
 // grid display
 const sizeDisplay = document.createElement("h2");
 document.body.append(sizeDisplay);
