@@ -15,32 +15,35 @@ document.body.insertBefore(btnContainer, container);
 const clearBtn = document.createElement("button");
 btnContainer.append(clearBtn);
 clearBtn.innerText = "Clear Grid";
-clearBtn.classList.add("clear-button");
+clearBtn.classList.add("main-button");
+clearBtn.style.backgroundColor = "lightskyblue";
 clearBtn.addEventListener("click", newGrid);
 
 // black color button
 const blackBtn = document.createElement("button");
 btnContainer.append(blackBtn);
 blackBtn.innerText = "Black";
-blackBtn.classList.add("black-button");
+blackBtn.classList.add("main-button");
+blackBtn.style.backgroundColor = "black";
 blackBtn.addEventListener("click", function () {
   color = "black";
 });
 
 // rainbow color button
-const rainbowBtn = document.createElement("button");
-btnContainer.append(rainbowBtn);
-rainbowBtn.innerText = "Rainbow";
-rainbowBtn.classList.add("rainbow-button");
-rainbowBtn.addEventListener("click", function () {
+const randomBtn = document.createElement("button");
+btnContainer.append(randomBtn);
+randomBtn.innerText = "Random";
+randomBtn.classList.add("main-button");
+randomBtn.classList.add("random-color");
+randomBtn.addEventListener("click", function () {
   color = "random";
 });
 
 // pick color button
 const pickColorBtn = document.createElement("button");
 btnContainer.append(pickColorBtn);
-pickColorBtn.innerText = "Pick";
-pickColorBtn.classList.add("pick-button");
+pickColorBtn.classList.add("main-button");
+pickColorBtn.style.backgroundColor = "lemonchiffon";
 const input = document.createElement("input");
 input.setAttribute("type", "color");
 input.setAttribute("value", "#0000FF");
@@ -57,8 +60,9 @@ input.addEventListener("change", function () {
 // eraser button
 const eraserBtn = document.createElement("button");
 btnContainer.append(eraserBtn);
-eraserBtn.innerText = "Erase";
-eraserBtn.classList.add("eraser-button");
+eraserBtn.innerText = "Eraser";
+eraserBtn.classList.add("main-button");
+eraserBtn.style.backgroundColor = "lightcoral";
 eraserBtn.addEventListener("click", function () {
   color = "white";
 });

@@ -14,40 +14,6 @@ body {
   border: 1px solid black;
 }
 
-.hover-black {
-  background-color: black;
-}
-
-.clear-button {
-  background-color: aquamarine;
-  width: 75px;
-  height: 50px;
-}
-
-.black-button {
-  background-color: black;
-  color: white;
-  width: 75px;
-  height: 50px;
-}
-
-.rainbow-button {
-  background-color: royalblue;
-  width: 75px;
-  height: 50px;
-}
-
-.pick-button {
-  background-color: blanchedalmond;
-  width: 75px;
-  height: 50px;
-}
-
-.eraser-button {
-  background-color: lightgrey;
-  width: 75px;
-  height: 50px;
-}
 .size-display {
   margin: 0px;
 }
@@ -55,4 +21,28 @@ body {
 .btn-container {
   display: flex;
   gap: 10px;
+}
+
+.main-button {
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.main-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.random-color {
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
