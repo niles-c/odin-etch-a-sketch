@@ -2,9 +2,9 @@
 let color = "black";
 
 // container
-// const gridContainer = document.querySelector("#container");
-// gridContainer.classList.add("grid-container");
-// const h1 = document.querySelector("h1");
+const gridContainer = document.querySelector("#container");
+gridContainer.classList.add("grid-container");
+const h1 = document.querySelector("h1");
 
 // button container
 const btnContainer = document.createElement("div");
@@ -41,6 +41,18 @@ const pickColorBtn = document.createElement("button");
 btnContainer.append(pickColorBtn);
 pickColorBtn.innerText = "Pick";
 pickColorBtn.classList.add("pick-button");
+const input = document.createElement("input");
+input.setAttribute("type", "color");
+input.setAttribute("value", "#0000FF");
+pickColorBtn.append(input);
+input.addEventListener("change", function () {
+  console.log(input.value);
+  color = input.value;
+});
+
+// this.innerHTML = `<label for="colorpicker">Pick</label>
+//  <input type="color" id="colorpicker" value="#000000">`;
+// color = this.getElementByID("colorpicker");
 
 // eraser button
 const eraserBtn = document.createElement("button");
@@ -66,9 +78,6 @@ function randomColor() {
 
 // build grid
 function buildGrid(size) {
-  const gridContainer = document.querySelector("#container");
-  gridContainer.classList.add("grid-container");
-  const h1 = document.querySelector("h1");
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for (let i = 0; i < `${size * size}`; i++) {
