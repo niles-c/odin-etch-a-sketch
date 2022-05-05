@@ -4,12 +4,20 @@ let color = "black";
 // container
 const gridContainer = document.querySelector("#container");
 gridContainer.classList.add("grid-container");
+
+// title
 const h1 = document.querySelector("h1");
+h1.classList.add("title");
+
+// grid size display
+const sizeDisplay = document.createElement("h2");
+document.body.append(sizeDisplay);
+sizeDisplay.classList.add("size-display");
 
 // button container
 const btnContainer = document.createElement("div");
 btnContainer.classList.add("btn-container");
-document.body.insertBefore(btnContainer, container);
+document.body.insertBefore(btnContainer, gridContainer);
 
 // clear grid button
 const clearBtn = document.createElement("button");
@@ -43,19 +51,17 @@ randomBtn.addEventListener("click", function () {
 const pickColorBtn = document.createElement("button");
 btnContainer.append(pickColorBtn);
 pickColorBtn.classList.add("main-button");
-pickColorBtn.style.backgroundColor = "lemonchiffon";
+pickColorBtn.style.backgroundColor = "burlywood";
 const input = document.createElement("input");
 input.setAttribute("type", "color");
 input.setAttribute("value", "#0000FF");
 pickColorBtn.append(input);
 input.addEventListener("change", function () {
-  console.log(input.value);
   color = input.value;
 });
-
-// this.innerHTML = `<label for="colorpicker">Pick</label>
-//  <input type="color" id="colorpicker" value="#000000">`;
-// color = this.getElementByID("colorpicker");
+pickColorBtn.addEventListener("click", function () {
+  color = input.value;
+});
 
 // eraser button
 const eraserBtn = document.createElement("button");
@@ -66,11 +72,6 @@ eraserBtn.style.backgroundColor = "lightcoral";
 eraserBtn.addEventListener("click", function () {
   color = "white";
 });
-
-// grid display
-const sizeDisplay = document.createElement("h2");
-document.body.append(sizeDisplay);
-sizeDisplay.classList.add("size-display");
 
 // random color function
 function randomColor() {

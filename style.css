@@ -1,5 +1,4 @@
 body {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,15 +6,23 @@ body {
   gap: 10px;
 }
 
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px lightcyan;
+  color: darkslateblue;
+  font-size: 56px;
+}
+
 .grid-container {
   display: grid;
   width: 500px;
   height: 500px;
-  border: 1px solid black;
+  border: 5px solid black;
 }
 
 .size-display {
   margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-container {
@@ -26,7 +33,7 @@ body {
 .main-button {
   border: none;
   color: white;
-  padding: 10px 16px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
