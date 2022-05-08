@@ -2,6 +2,8 @@
 
 This is my solution to the Etch-a-Sketch project from The Odin Project.
 
+[See solution here](https://niles-c.github.io/odin-etch-a-sketch/)
+
 - [The Odin Project - Etch-a-Sketch](#the-odin-project---etch-a-sketch)
   - [The Challenge](#the-challenge)
   - [My Process](#my-process)
