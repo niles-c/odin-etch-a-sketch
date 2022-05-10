@@ -4,7 +4,10 @@ This is my solution to the Etch-a-Sketch project from The Odin Project.
 
 [See solution here](https://niles-c.github.io/odin-etch-a-sketch/)
 
+## Table of Contents
+
 - [The Odin Project - Etch-a-Sketch](#the-odin-project---etch-a-sketch)
+  - [Table of Contents](#table-of-contents)
   - [The Challenge](#the-challenge)
   - [My Process](#my-process)
     - [Creating the Grid](#creating-the-grid)
