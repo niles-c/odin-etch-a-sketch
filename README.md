@@ -2,7 +2,7 @@
 
 This is my solution to the Etch-a-Sketch project from The Odin Project.
 
-[See solution here](https://niles-c.github.io/odin-etch-a-sketch/)
+[See solution here](https://niles-c.github.io/portfolio-etch-a-sketch/)
 
 ## Table of Contents
 
